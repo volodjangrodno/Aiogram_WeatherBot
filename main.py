@@ -26,8 +26,8 @@ async def city(message: Message):
 
 @dp.message()
 async def get_weather(message: Message):
-    city_name = message.text
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_WEATHER}&units=metric&lang=ru"
+    city = message.text
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_WEATHER}&units=metric&lang=ru"
 
     response = requests.get(url)
     data = response.json()
